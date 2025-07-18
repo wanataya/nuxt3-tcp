@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-17',
   devtools: { enabled: true },
@@ -18,8 +20,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      socketPort: process.env.SOCKET_PORT || 3002,
-      tcpPort: process.env.TCP_PORT || 3001
+      socketPort: parseInt(process.env.SOCKET_PORT || '') || 3002,
+      tcpPort: parseInt(process.env.TCP_PORT || '') || 3001
     }
   }
 })
